@@ -1,4 +1,10 @@
+#!/bin/python3
 
+import math
+import os
+import random
+import re
+import sys
 
 #
 # Complete the 'circularArrayRotation' function below.
@@ -9,18 +15,18 @@
 #  2. INTEGER k
 #  3. INTEGER_ARRAY queries
 #
-def circularArrayRotation(a, k, queries):
-    n = len(a)
-    k %= n  # To handle cases where k is greater than the array length, we take modulo n.
+
+def circularArrayRotation(a, k, queries, n):
+    
+      # To handle cases where k is greater than the array length, we take modulo n.
 
     result = [a[(idx - k) % n] for idx in queries]
 
-    return result
-        
-
+    return result   
+    
 
 if __name__ == '__main__':
-    
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
     first_multiple_input = input().rstrip().split()
 
@@ -38,6 +44,9 @@ if __name__ == '__main__':
         queries_item = int(input().strip())
         queries.append(queries_item)
 
-    result = circularArrayRotation(a, k, queries)
+    result = circularArrayRotation(a, k, queries, n)
 
-    print(result)
+    fptr.write('\n'.join(map(str, result)))
+    fptr.write('\n')
+
+    fptr.close()
