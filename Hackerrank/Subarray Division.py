@@ -3,6 +3,18 @@
 
 def birthday(s, d, m):
     # Write your code here
+    ways = 0 
+    n = len(s)
+    for i in range(n -m + 1):
+        segment_sum = 0 
+        for j in range(i, i + m):
+            segment_sum += s[j]
+            
+        if segment_sum == d:
+            ways += 1
+    
+    return ways
+        
 
 if __name__ == '__main__':
     
