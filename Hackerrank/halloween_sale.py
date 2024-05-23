@@ -5,11 +5,12 @@
 
 def howManyGames(p, d, m, s):
     count = 0
-    while s >= p:
+    while s >= p:   
         s-=p
         count += 1
         p = max(p - d, m)
-    print(count)
+        print(p)
+    print(count)    
 
 
 if __name__ == '__main__':
