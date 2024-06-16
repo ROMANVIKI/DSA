@@ -1,5 +1,3 @@
-
-
 def minimumDistances(a):
     same_num_indices = []
     # Write your code here
@@ -8,10 +6,10 @@ def minimumDistances(a):
             if i == j:
                 pass
             else:
-                if  a[i] == a[j]:
+                if a[i] == a[j]:
                     min_value = i - j
                     if min_value > 0:
-                       
+
                         same_num_indices.append(min_value)
     if not same_num_indices:
         min_dist = -1
@@ -21,9 +19,7 @@ def minimumDistances(a):
     # return same_num_indices
 
 
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     # fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
     n = int(input().strip())
