@@ -1,21 +1,12 @@
-def fib_func(num):
-    count = 1
-    current_val = 0
-    if num >= 0:
-        current_val += num - count
-    return current_val
-
-
 class Solution:
     def fib(self, n: int) -> int:
-        total = 0
-        for num in range(n + 1):
-            total += fib_func(num) 
+        if n <= 1:
+            return n
 
-
-        return total
-
-
+        a, b = 0, 1
+        for _ in range(2, n + 1):
+            a, b = b, a + b
+        return b
 
 
 sol = Solution()
