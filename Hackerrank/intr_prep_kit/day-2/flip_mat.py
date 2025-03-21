@@ -32,22 +32,16 @@ import sys
 
 
 def flippingMatrix(matrix, n):
-    groups = []
+    sol = 0
     for x in range(n):
         for y in range(n):
-            groups.append(
-                [
-                    matrix[x][y],
-                    matrix[2 * n - 1 - x][y],
-                    matrix[x][2 * n - 1 - y],
-                    matrix[2 * n - 1 - x][2 * n - 1 - y],
-                ]
+            sol += max(
+                matrix[x][y],
+                matrix[2 * n - 1 - x][y],
+                matrix[x][2 * n - 1 - y],
+                matrix[2 * n - 1 - x][2 * n - 1 - y],
             )
-
-    sol = 0
-    for arr in groups:
-        sol += max(arr)
-    return f"{groups} - groups -- the sol {sol}"
+    return sol
 
 
 if __name__ == "__main__":
